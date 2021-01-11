@@ -1,8 +1,8 @@
 package com.patroklos.decorator;
 
-public class TomatoIngredient extends SaladDecorator{
+public class TomatoIngredientDecorator extends SaladDecorator{
 
-	public TomatoIngredient(ISalad salad) {
+	public TomatoIngredientDecorator(ISalad salad) {
 		super(salad);
 	}
 	
