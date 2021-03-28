@@ -15,14 +15,13 @@ public class CommandPattern {
 		
 		//initialize the processes
 		CreateContractProcess createContract = new CreateContractProcess(contract);
-	    CancelContractProcess cancelContract = new CancelContractProcess(contract);
-				
+	    CancelContractProcess cancelContract = new CancelContractProcess(contract);			
 		
 		//use process manager to delegate the process
-		ProcessManager processManager = new ProcessManager(createContract);
-		processManager.run();		
-		processManager = new ProcessManager(cancelContract);
-		processManager.run();
+		ProcessManager processManager = new ProcessManager();
+		processManager.addProcess(createContract);
+		processManager.addProcess(cancelContract);
+		processManager.execute();
 		
 
 	}
